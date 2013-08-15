@@ -60,6 +60,7 @@ public:
     void playTimeLine1(CCObject* sender);
     void playTimeLine2(CCObject* sender);
     void playTimeLine3(CCObject* sender);
+    void goBack(CCObject* sender);
     
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(ShowMenu);

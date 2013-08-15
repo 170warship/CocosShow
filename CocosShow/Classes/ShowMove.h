@@ -68,6 +68,9 @@ private:
     bool m_bTouchIn;
     CCPoint m_startpPoint;
     Dragon* m_pDragon;
+    
+    void showButton();
+    void goBack(CCObject* sender);
 };
 
 class ShowMoveLoader : public cocos2d::extension::CCLayerLoader {

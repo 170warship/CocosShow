@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C39D0A417BA39CC009D31DB /* ItemRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C39D0A317BA39CC009D31DB /* ItemRect.png */; };
 		8CA3CEED17B4ECC50041CB52 /* Explosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CA3CEEB17B4ECC50041CB52 /* Explosion.cpp */; };
 		8CF3AF7517B1E69B00304422 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF3AF7417B1E69B00304422 /* QuartzCore.framework */; };
 		8CF3AF7717B1E69B00304422 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF3AF7617B1E69B00304422 /* OpenGLES.framework */; };
@@ -333,6 +334,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C39D0A317BA39CC009D31DB /* ItemRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemRect.png; sourceTree = "<group>"; };
 		8CA3CEEB17B4ECC50041CB52 /* Explosion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Explosion.cpp; path = Classes/Explosion.cpp; sourceTree = "<group>"; };
 		8CA3CEEC17B4ECC50041CB52 /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/Explosion.h; sourceTree = "<group>"; };
 		8CF3AF7017B1E69B00304422 /* CocosShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocosShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2230,6 +2232,7 @@
 		8CF3B32717B24A4D00304422 /* Published-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				8C39D0A317BA39CC009D31DB /* ItemRect.png */,
 				8CF3B38117B3833800304422 /* Explosion.ccbi */,
 				8CF3B37D17B27F5600304422 /* SelectScene.ccbi */,
 				8CF3B37E17B27F5600304422 /* ShowMove.ccbi */,
@@ -2403,6 +2406,7 @@
 				8CF3B38017B27F5600304422 /* ShowMove.ccbi in Resources */,
 				8CF3B38217B3833800304422 /* Explosion.ccbi in Resources */,
 				8CF3B39A17B3B9B100304422 /* fire.png in Resources */,
+				8C39D0A417BA39CC009D31DB /* ItemRect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2682,7 +2686,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: bati liu (D9W8A26KK7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: bati liu (D9W8A26KK7)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2705,6 +2710,8 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE = "17B91F5A-3C20-4011-8F41-3E14B9DDD34D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17B91F5A-3C20-4011-8F41-3E14B9DDD34D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2714,7 +2721,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: bati liu (D9W8A26KK7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: bati liu (D9W8A26KK7)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2735,6 +2743,8 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "17B91F5A-3C20-4011-8F41-3E14B9DDD34D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17B91F5A-3C20-4011-8F41-3E14B9DDD34D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2750,6 +2760,7 @@
 				GCC_PREFIX_HEADER = CocosShow/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = CocosShow/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CocosShow/libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -2776,6 +2787,7 @@
 				GCC_PREFIX_HEADER = CocosShow/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = CocosShow/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CocosShow/libs/cocos2dx/platform/third_party/ios/libraries\"",

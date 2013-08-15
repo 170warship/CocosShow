@@ -19,6 +19,7 @@ USING_NS_CC;
 class GameScene:public CCLayer{
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
+    CCLabelTTF* m_pScoreLabel;
     
     virtual bool init();
     
@@ -36,13 +37,22 @@ public:
 private:
     void fire();
     void addEnimy();
+    void showButton();
+    void goBack(CCObject* sender);
+    void reStart(CCObject* sender);
     Dragon* m_pDragon;
+    
+    CCPoint m_StartPoint;
     CCArray* m_pAemoArray;
     CCArray* m_pEnimyArray;
     CCSize m_winSize;
     int m_iOldFrame;
     int m_iOldFireFrame;
     int m_iFrame;
+    int m_iScore;
+    int m_iOldScore;
+    int m_iEnimySpeed;
+    bool m_bIsEnd;
 };
 
 #endif /* defined(__CocosShow__GameScene__) */

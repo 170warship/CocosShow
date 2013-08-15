@@ -8,6 +8,7 @@
 
 #include "ShowMenu.h"
 #include "CCBAnimationManager.h"
+#include "SelectScene.h"
 
 class ShowMenuInit{
 public:
@@ -60,11 +61,16 @@ SEL_MenuHandler ShowMenu::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTar
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "playTimeLine1:", ShowMenu::playTimeLine1);
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "playTimeLine2:", ShowMenu::playTimeLine2);
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "playTimeLine3:", ShowMenu::playTimeLine3);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "goBack:", ShowMenu::goBack);
 }
 
 
 SEL_CCControlHandler ShowMenu::onResolveCCBCCControlSelector(CCObject * pTarget,const char * pSelectorName){
     return NULL;
+}
+
+void ShowMenu::goBack(cocos2d::CCObject *sender){
+    CCDirector::sharedDirector()->replaceScene(SelectScene::scene());
 }
 
 void ShowMenu::playTimeLine1(cocos2d::CCObject *sender){

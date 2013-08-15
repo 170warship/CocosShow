@@ -6,6 +6,7 @@
 //
 //
 #include "ShowMove.h"
+#include "SelectScene.h"
 class ShowMoveInit{
 public:
     ShowMoveInit(){
@@ -43,6 +44,8 @@ void ShowMove::onEnter(){
     
     CCLayer::onEnter();
     this->setTouchEnabled(true);
+    
+    showButton();
     
 }
 
@@ -82,9 +85,12 @@ void ShowMove::ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent
     point = CCDirector::sharedDirector()->convertToGL(point);
     
     if (m_bMoved) {
+        float tangle = ccpDistance(m_startpPoint, point)*(m_startpPoint.x>point.x?-1:1);
         
+        m_pDragon->runAction(CCRotateBy::create(0.6, tangle));
     }else{
-        m_pDragon->runAction(CCMoveTo::create(0.6,point));
+//        m_pDragon->runAction(CCMoveTo::create(0.6,point));
+        m_pDragon->runAction( CCEaseBackOut::create(CCMoveTo::create(0.6,point)) );
          printf("MoveTo: x:%f  y:%f\n", point.x, point.y);
     }
 
@@ -99,4 +105,24 @@ void ShowMove::ccTouchesMoved(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent
 void ShowMove::ccTouchesCancelled(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent){
     m_bTouchIn = false;
     m_bMoved = false;
+}
+
+
+void ShowMove::showButton(){
+    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+                                                          "CloseNormal.png",
+                                                          "CloseSelected.png",
+                                                          this,
+                                                          menu_selector(ShowMove::goBack));
+    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width/2, 20) );
+    
+    // create menu, it's an autorelease object
+    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+    pMenu->setPosition( CCPointZero );
+    this->addChild(pMenu, 1);
+}
+
+
+void ShowMove::goBack(CCObject* sender){
+    CCDirector::sharedDirector()->replaceScene(CCTransitionZoomFlipAngular::create(0.9, SelectScene::scene()) );
 }

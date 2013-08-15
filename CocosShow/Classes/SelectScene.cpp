@@ -66,12 +66,12 @@ SEL_CCControlHandler SelectScene::onResolveCCBCCControlSelector(CCObject * pTarg
 }
 
 void SelectScene::sceneTimeLine(CCObject* sender){
-    CCDirector::sharedDirector()->replaceScene(ShowMenu::scene());
+    CCDirector::sharedDirector()->replaceScene(CCTransitionFlipX::create(0.6, ShowMenu::scene()) );
 }
 void SelectScene::sceneAction(CCObject* sender){
-    CCDirector::sharedDirector()->replaceScene(ShowMove::scene());
+    CCDirector::sharedDirector()->replaceScene( CCTransitionJumpZoom::create(0.6,ShowMove::scene()) );
 }
 void SelectScene::sceneTransition(CCObject* sender){
-    CCDirector::sharedDirector()->replaceScene(GameScene::scene());
+    CCDirector::sharedDirector()->replaceScene( CCTransitionMoveInL::create(0.8, GameScene::scene() ) );
 }
 
